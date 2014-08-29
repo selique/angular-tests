@@ -21,6 +21,7 @@ todoApp.controller('todoList', function($scope){
 
 	$scope.delTask = function($index) {
 		$scope.tasks.splice($index, 1);
+		localStorage.setItem('tasksStorage', angular.toJson($scope.tasks));
 	}
 
 });
