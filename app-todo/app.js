@@ -9,11 +9,18 @@ todoApp.controller('todoList', function($scope){
 		$scope.tasks = angular.fromJson(tasksLocal);
 	}
 
+	$scope.doneTask = function(task){
+		localStorage.setItem('tasksStorage', angular.toJson($scope.tasks));
+	}
+
 	$scope.addTask = function(task) {
 		if (task.title === 0) {
 			return false;
 		} else {
-			$scope.tasks.push(angular.copy(task));
+			$scope.tasks.push({
+				title: task.title,
+				done: false
+			});
 			delete $scope.task;
 			localStorage.setItem('tasksStorage', angular.toJson($scope.tasks));
 		}
