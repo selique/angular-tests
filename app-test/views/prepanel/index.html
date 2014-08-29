@@ -1,0 +1,24 @@
+<div class="prepanel" ng-controller="prepanelCtrl">
+
+  <h1 class="ls-title-intro ls-ico-list2">{{title}}</h1>
+
+  <div class="ls-list" ng-repeat="domain in domains">
+    <header class="ls-list-header">
+      <div class="ls-list-title col-sm-9">
+        <a href="#/nameservers/{{domain.id}}">{{domain.id}} <span class="ls-tag">{{domain.system_status}}</span></a>
+        <small>Expira em: <strong>{{domain.service_key}}</strong></small>
+      </div>
+    </header>
+    <div class="ls-list-content ">
+      <div class="col-xs-12 col-md-6">
+        Registro de domínio internacional
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <strong class="ls-list-label">Status</strong>
+        {{domain.system_status}}
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="prepanelCtrl.js"></script>

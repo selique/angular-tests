@@ -1,0 +1,48 @@
+.td-box {
+	margin: 10% auto 0;
+	max-width: 300px;
+}
+
+.td-list {
+	list-style: none;
+	padding: 20px 0;
+}
+
+.td-list li:nth-child(odd) {
+	background-color: #fdfdfd;
+}
+
+.td-list li {
+	padding: 10px;
+	font-size: .8rem;
+	position: relative;
+	margin-bottom: 1px;
+}
+
+form input[type="text"] {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.td-task-del {
+	padding: 3px 5px;
+	/*position: absolute;
+	right: 5px;
+	top: 9px;*/
+	background-color: red;
+	color: #fff;
+	font-size: .5rem;
+	cursor: pointer;
+}
+
+.td-list li.td-done-true {
+	background-color: cornsilk;
+	opacity: .5;
+	cursor: default;
+}
+
+.td-msg-empty {
+	margin-top: 40px !important;
+	text-align: center;
+	font-style: italic;
+}

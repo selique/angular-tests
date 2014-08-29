@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="todoApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/3.2.2/stylesheets/locastyle.css">
+	<link rel="stylesheet" href="assets/stylesheet/style.css">
+</head>
+<body>
+
+<div class="td-box ls-box" ng-controller="todoList">
+	<h1 class="ls-title-1">Todo</h1>
+	<p>Você tem {{tasks.length}} tarefas para fazer.</p>
+	
+	<p class="td-msg-empty ls-box-gray ls-box" ng-if="tasks.length==0">Você não tem tarefas. Isso pode ser bom ou ruim.</p>
+
+	<ul class="td-list">
+		<li ng-repeat="task in tasks track by $id($index)" class="td-done-{{task.done}}">
+			<input type="checkbox" ng-model="task.done"> {{task.title}} 
+			<span class="td-task-del ls-float-right" ng-click="delTask($index)">x</span>
+		</li>
+	</ul>
+	<form action="">
+		<input type="text" ng-model="task.title" placeholder="Qual a sua tarefa?">
+		<button class="ls-btn ls-float-right" ng-click="addTask(task)">Inserir tarefa</button>
+	</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.js"></script>
+<script src="app.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+<script src="//assets.locaweb.com.br/locastyle/3.2.2/javascripts/locastyle.js"></script>
+
+</body>
+</html>
