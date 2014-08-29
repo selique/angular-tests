@@ -15,7 +15,7 @@
 	<p class="td-msg-empty ls-box-gray ls-box" ng-if="tasks.length==0">Você não tem tarefas. Isso pode ser bom ou ruim.</p>
 
 	<ul class="td-list">
-		<li ng-repeat="task in tasks track by $id($index)" class="td-done-{{task.done}}">
+		<li ng-repeat="task in tasks" class="td-done-{{task.done}}">
 			<input type="checkbox" ng-model="task.done"> {{task.title}} 
 			<span class="td-task-del ls-float-right" ng-click="delTask($index)">x</span>
 		</li>
