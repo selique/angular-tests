@@ -14,16 +14,12 @@ todoApp.controller('todoList', function($scope){
 	}
 
 	$scope.addTask = function(task) {
-		if (task.title === 0) {
-			return false;
-		} else {
 			$scope.tasks.push({
 				title: task.title,
 				done: false
 			});
 			delete $scope.task;
 			localStorage.setItem('tasksStorage', angular.toJson($scope.tasks));
-		}
 	}
 
 	$scope.delTask = function($index) {
